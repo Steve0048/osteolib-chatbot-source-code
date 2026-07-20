@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Osteolib, assistant</title>
+</head>
+<body>
+    <h1>ChatBot Test</h1>
+    <div id="voiceflow-chat-frame"></div>
+    <script type="module">
+        import { FileUploadExtension } from './extensions.js';
+        (function (d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function () {
+            window.voiceflow.chat.load({
+            verify: { projectID: '6a5ddb322c4e58cd5532705a' },
+            url: 'https://general-runtime.voiceflow.com',
+            voice: { url: "https://runtime-api.voiceflow.com" },
+            assistant: {
+                extensions: [FileUploadExtension],
+            },
+            });
+        };
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html>
